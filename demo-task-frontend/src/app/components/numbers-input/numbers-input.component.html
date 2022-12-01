@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col allign-self-center">
+            <form #numberForm="ngForm" (ngSubmit)="addNumber(numberForm)">
+                <div class="input-group mb-3 shadow rounded">
+                    <input type="number" class="form-control border-dark shadow-none" name="number" ngModel
+                        placeholder="Insert integer">
+                    <input class="btn btn-outline-dark" type="submit" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div>
+            <div class="row row-cols-auto">
+                <div class="col border shadow border-dark m-1 border-1 rounded number-box" *ngFor="let number of numbers">
+                    {{number}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+
+        <form #sortForm="ngForm" (ngSubmit)="sortNumbers(sortForm)">
+            <div class="btn-group shadow rounded" role="group" aria-label="Basic radio toggle button group">
+                <input ngModel value="ASC" type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                    autocomplete="off">
+                <label class="btn btn-outline-dark" for="btnradio1">ASC</label>
+
+                <input ngModel value="DESC" type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                    autocomplete="off">
+                <label class="btn btn-outline-dark" for="btnradio2">DESC</label>
+                <input class="btn btn-outline-dark" value="Sort" type="submit">
+                <button class="btn btn-outline-dark" (click)="clean()">Clean</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
